@@ -24,7 +24,7 @@ double uniform(double a, double b)
 {
 	return a + (b - a)*mwc() / UINT32_MAX;
 }
-
+/*
 int main()
 {
 	unsigned count = 0, inside = 0;
@@ -46,4 +46,27 @@ int main()
 	cout << "Exact: 12";
 	return 0;
 }
-
+*/
+int main()
+{
+	cout.precision(15);
+	int count = 0, inside = 0;
+	const int countMax = 10000000;
+	while (count < countMax)
+	{
+		double x = uniform(0, 2);
+		double y = uniform(-2, 2);
+		if ((x*x + y*y) <= 4.)
+		{
+			double z = uniform(0, 6);
+			if (x + y + z <= 4.)
+				inside++;
+		}
+		count++;
+	}
+	cout << inside << '\n';
+	cout << 48. * inside / countMax << '\n';
+	cout << "Exact: 19.7994078953850\n";
+	cout << 19.7994078953850 - 48. * inside / countMax;
+	return 0;
+}
