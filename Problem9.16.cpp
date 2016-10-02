@@ -51,7 +51,7 @@ int main()
 {
 	cout.precision(15);
 	int count = 0, inside = 0;
-	const int countMax = 10000000;
+	const int countMax = 10000;
 	while (count < countMax)
 	{
 		double x = uniform(0, 2);
