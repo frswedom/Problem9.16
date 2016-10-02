@@ -65,8 +65,8 @@ int main()
 		}
 		count++;
 	}
-	cout << inside << '\n';
-	cout << totalVolume * inside / countMax << '\n';
+	const double computedVolume = totalVolume * inside / countMax;
+	cout << computedVolume << '\n';
 	cout << "Exact: 19.7994078953850\n";
 	cout << 19.7994078953850 - totalVolume * inside / countMax;
 	return 0;
