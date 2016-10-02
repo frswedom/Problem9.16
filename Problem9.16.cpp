@@ -51,7 +51,8 @@ int main()
 {
 	cout.precision(15);
 	int count = 0, inside = 0;
-	const int countMax = 10000000;
+	const int countMax = 10000;
+	const double totalVolume = 48.;
 	while (count < countMax)
 	{
 		double x = uniform(0, 2);
@@ -64,9 +65,9 @@ int main()
 		}
 		count++;
 	}
-	cout << inside << '\n';
-	cout << 48. * inside / countMax << '\n';
+	const double computedVolume = totalVolume * inside / countMax;
+	cout << computedVolume << '\n';
 	cout << "Exact: 19.7994078953850\n";
-	cout << 19.7994078953850 - 48. * inside / countMax;
+	cout << 19.7994078953850 - totalVolume * inside / countMax;
 	return 0;
 }
